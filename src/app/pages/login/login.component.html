@@ -1,0 +1,35 @@
+<main class="login-stage">
+  <section class="login-panel outline-panel">
+    <div class="login-emblem" aria-hidden="true">F</div>
+    <p class="eyebrow">ANGULAR PRACTICE FOUNDRY</p>
+    <h1>Sign in to<br />your workspace.</h1>
+    <p class="login-intro">One small workshop for interfaces, data, and ideas.</p>
+    <form #loginForm="ngForm" (ngSubmit)="submit(loginForm)" novalidate>
+      <label for="email">Email address</label>
+      <input id="email" type="email" name="email" [(ngModel)]="credentials.email" #email="ngModel" required email autocomplete="username" placeholder="you@example.com" [attr.aria-invalid]="emailError || (email.invalid && email.touched) ? 'true' : null" />
+      @if (email.invalid && email.touched) {
+        <p class="field-error">Enter a valid email address.</p>
+      } @else if (emailError) {
+        <p class="field-error">{{ emailError }}</p>
+      }
+      <label for="password">Password</label>
+      <input id="password" type="password" name="password" [(ngModel)]="credentials.password" #password="ngModel" required minlength="8" autocomplete="current-password" placeholder="At least 8 characters" [attr.aria-invalid]="passwordError || (password.invalid && password.touched) ? 'true' : null" />
+      @if (password.invalid && password.touched) {
+        <p class="field-error">Password must be at least 8 characters.</p>
+      } @else if (passwordError) {
+        <p class="field-error">{{ passwordError }}</p>
+      }
+      <button class="button button-primary login-submit" type="submit">Enter workspace <span aria-hidden="true">→</span></button>
+    </form>
+    <p class="demo-note">Demo access <strong>admin&#64;gmail.com</strong><span> / </span><strong>admin1234</strong></p>
+  </section>
+  <aside class="login-aside">
+    <span class="aside-index">FIELD NOTES · 01—03</span>
+    <div class="aside-copy">
+      <p class="eyebrow">A PLACE TO BUILD</p>
+      <h2>Practice the parts<br />that make a product.</h2>
+      <p>Explore a measured set of layouts, API interactions, and a conversational interface. No noise, just useful practice.</p>
+    </div>
+    <span class="aside-coordinate">37° 46' 49.2" N / 122° 25' 09.8" W</span>
+  </aside>
+</main>

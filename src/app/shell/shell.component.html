@@ -1,0 +1,18 @@
+<div class="app-frame">
+  <header class="topbar">
+    <a class="brand" routerLink="/dashboard" aria-label="Foundry home">
+      <span class="brand-mark">F</span>
+      <span>Foundry<span class="brand-muted"> / practice</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Overview</a>
+      <a routerLink="/api-work" routerLinkActive="active">API work</a>
+      <a routerLink="/genai-chat" routerLinkActive="active">GenAI chat</a>
+    </nav>
+    <button class="button button-quiet logout-button" type="button" (click)="logout()">Sign out</button>
+  </header>
+  <main class="content-frame">
+    <router-outlet />
+  </main>
+  <footer class="app-footer"><span>Angular Practice Foundry</span><span>Small experiments, clearly made.</span></footer>
+</div>

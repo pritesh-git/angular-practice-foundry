@@ -1,0 +1,32 @@
+<section class="page-section chat-page">
+  <header class="page-heading centered-heading">
+    <p class="eyebrow">WORKSPACE / GENAI CHAT</p>
+    <h1>Thoughts into conversation.</h1>
+    <p class="page-lede">A quiet place to explore a question, one useful reply at a time.</p>
+  </header>
+  <section class="chat-panel outline-panel" aria-label="Chat with the assistant">
+    <header class="chat-header"><div class="assistant-avatar" aria-hidden="true">✳</div><div><h2>Studio assistant</h2><p><span class="status-dot"></span> Ready to think with you</p></div><span class="chat-session">SESSION 01</span></header>
+    <div class="message-scroll" aria-live="polite">
+      @if (messages.length === 0) {
+        <div class="chat-empty"><span class="chat-orbit" aria-hidden="true">✳</span><p class="eyebrow">A FRESH PAGE</p><h2>Where should we begin?</h2><p>Choose a prompt or bring a question of your own.</p>
+          <div class="prompt-list">
+            @for (prompt of prompts; track prompt) {
+              <button class="prompt-button" type="button" (click)="send(prompt)"><span>{{ prompt }}</span><span aria-hidden="true">↗</span></button>
+            }
+          </div>
+        </div>
+      } @else {
+        <ol class="message-list">
+          @for (message of messages; track message.id) {
+            <li class="message-row" [class.from-you]="message.sender === 'you'">
+              <span class="message-avatar">{{ message.sender === 'you' ? 'Y' : '✳' }}</span>
+              <div class="message-content"><span class="message-label">{{ message.sender === 'you' ? 'YOU' : 'STUDIO ASSISTANT' }} · {{ message.time }}</span><p>{{ message.text }}</p></div>
+            </li>
+          }
+        </ol>
+      }
+    </div>
+    <form class="chat-composer" (ngSubmit)="send()"><label class="visually-hidden" for="chat-draft">Your message</label><textarea id="chat-draft" name="draft" [(ngModel)]="draft" (keydown.enter)="onEnter($event)" rows="1" maxlength="4000" placeholder="Write a message..."></textarea><span class="character-count">{{ draft.length }}/4000</span><button class="send-button" type="submit" [disabled]="!draft.trim()" aria-label="Send message">↑</button></form>
+    <p class="chat-footnote">LOCAL PREVIEW · Replies are simulated and are not sent to an AI service.</p>
+  </section>
+</section>
