@@ -1,69 +1,59 @@
-# Angular Practice Blog App
+# AngularPracticeFoundry
 
-This repository contains an Angular application designed for practicing core Angular concepts. It features user authentication (login/signup) and basic blog functionality (create/view blogs).
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.1.
 
-## Project Overview
+## Development server
 
-This project serves as a learning platform for Angular developers. It demonstrates:
+To start a local development server, run:
 
-* **Component-based architecture:** Building reusable UI components.
-* **Routing:** Implementing navigation between different views.
-* **Forms:** Handling user input with Angular forms.
-* **Authentication:** Basic login and signup functionality.
-* **Data display:** Displaying blog posts.
-* **Basic CRUD operations:** Creating and viewing blog posts.
-* **Tailwind CSS:** For styling.
+```bash
+ng serve
+```
 
-## Technologies Used
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-* **Angular:** Version 18.2.0
-* **TypeScript:** Version 5.5.2
-* **Tailwind CSS:** For styling.
-* **RxJS:** For reactive programming.
+## Code scaffolding
 
-## Getting Started
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-1.  **Clone the repository:**
+```bash
+ng generate component component-name
+```
 
-    ```bash
-    git clone <repository_url>
-    cd angular-app
-    ```
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-2.  **Install dependencies:**
+```bash
+ng generate --help
+```
 
-    ```bash
-    npm install
-    ```
+## Building
 
-3.  **Start the development server:**
+To build the project run:
 
-    ```bash
-    ng serve
-    ```
+```bash
+ng build
+```
 
-4.  **Open your browser:**
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-    Navigate to `http://localhost:4200/`.
+## Running unit tests
 
-## Scripts
-* `ng serve`: Starts the development server.
-* `ng build`: Builds the production application.
-* `ng watch`: Builds the application in watch mode for development.
-* `ng test`: Runs unit tests.
+To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
 
-## Future Improvements
-- Implement a backend service (e.g., Node.js with Express) for persistent data storage.
-- Add more robust authentication (e.g., JWT).
-- Implement detailed blog post viewing.
-- Add editing and deleting blog posts.
-- Add unit and integration tests.
-- Improve styling and user experience.
-- Add form validation.
-- Add error handling.
+```bash
+ng test
+```
 
-## Contributing
-Feel free to contribute to this project by submitting pull requests.
+## Running end-to-end tests
 
-## License
-This project is open-source and available under the MIT License.
+For end-to-end (e2e) testing, run:
+
+```bash
+ng e2e
+```
+
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
